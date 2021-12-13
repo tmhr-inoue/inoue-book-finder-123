@@ -41,9 +41,12 @@ def predict():
     graph = myfunc(sims[0][0],model_item)
     return render_template('webappa.html', message1 = graph[0], message2 = graph[1])
 
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host='localhost')
+# if __name__ == '__main__':
+if __name__ == "__main__":
+  port = int(os.environ.get('PORT', 8080))
+  app.run(host ='0.0.0.0',port = port)
+    # app.debug = True
+    # app.run(host='localhost')
 
 
 

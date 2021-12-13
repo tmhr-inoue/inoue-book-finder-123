@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='mystyle1.css')}}">
+    <title>おすすめ本</title> 
+    <style type="text/css">
+      label { display: block; }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+    <h1>好きそうな本を選んでください</h1>
+    <form action="/predict" method="post">
+      <label><input type="radio" name="you" value="{{message1}}" checked="checked" />{{message1}}</label>
+      <label><input type="radio" name="you" value="{{message2}}" checked="checked" />{{message2}}</label>
+      <label><input type="radio" name="you" value="{{message3}}" checked="checked" />{{message3}}</label>
+      <label><input type="radio" name="you" value="{{message4}}" checked="checked" />{{message4}}</label>
+      <label><input type="radio" name="you" value="{{message5}}" checked="checked" />{{message5}}</label>
+      <label><input type="radio" name="you" value="{{message6}}" checked="checked" />{{message6}}</label>
+      <label><input type="radio" name="you" value="{{message7}}" checked="checked" />{{message7}}</label>
+      <label><input type="radio" name="you" value="{{message8}}" checked="checked" />{{message8}}</label>
+      <label><input type="radio" name="you" value="{{message9}}" checked="checked" />{{message9}}</label>
+    </div>
+
+    <div class="content">
+      <form action="/predict" method="POST">
+          <div class="control">
+            <button type="submit" class="btn">検索</button>
+          </div>
+
+
+
+
+
+      </form>
+  </div>  
+
+
+  </body>
+</html>

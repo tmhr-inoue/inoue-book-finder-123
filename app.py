@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET']) #requestの種類 textデータのみを取得　htmlファイルを見るだけ
 def index():
-    filepath1 = os.path.dirname(os.path.abspath(__file__)) + "/flask_app/model/model.pkl"
-    filepath2 = os.path.dirname(os.path.abspath(__file__)) + "/flask_app/model/model_item.pkl"
+    filepath1 = os.path.dirname(os.path.abspath(__file__)) + "/model/model.pkl"
+    filepath2 = os.path.dirname(os.path.abspath(__file__)) + "/model/model_item.pkl"
 
     model = pickle.load(open(filepath1, 'rb'))#商品説明のワカチ書きデータ
     model_item = pickle.load(open(filepath2, 'rb'))#
@@ -31,9 +31,9 @@ def predict():
   
   if request.method == 'POST':
     title = request.form["you"]
-    filepath1 = os.path.dirname(os.path.abspath(__file__)) + "/flask_app/model/model.pkl"
+    filepath1 = os.path.dirname(os.path.abspath(__file__)) + "/model/model.pkl"
     model = pickle.load(open(filepath1, 'rb'))#作品説明のワカチ書きデータ
-    filepath2 = os.path.dirname(os.path.abspath(__file__)) + "/flask_app/model/model_item.pkl"
+    filepath2 = os.path.dirname(os.path.abspath(__file__)) + "/model/model_item.pkl"
     model_item = pickle.load(open(filepath2, 'rb'))#作品名と作品説明
 
     item_number = model_item.query(f"作品名 == \"{title}\"")["id"]
